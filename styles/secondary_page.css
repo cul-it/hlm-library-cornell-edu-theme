@@ -1,0 +1,1266 @@
+/****************************************
+ * Cornell University 
+ * Web Template with Two-line Unit Signature Banner
+ * Main CSS Rules
+ ****************************************/
+ 
+/*
+	The purpose of this stylesheet is to control the layout and formatting
+	of pages throughout the website. Place rules that apply to all pages and 
+	all web browsers in this stylesheet. To provide Internet Explorer v5.x 
+	on Windows with special rules, see hacks/ie5win.css. To provide Internet 
+	Explorer v5.x on Macintosh with special rules, see hacks/ie5mac.css.
+*/
+ 
+/****************************************
+ * General Formatting
+ ****************************************/
+/* 
+	The following rule sets up default global properties, such as
+	font family and color, page margin and padding, and the 
+	background color of the footer.
+	
+	Note the font-size declaration. Its purpose is to reset the 
+	default font size to 10px instead of 16px, allowing font sizes to 
+	be specified in ems throughout the stylesheet (1.0em = 10px, 
+	1.3em = 13px, etc.). It is important to specify font sizes in ems 
+	instead of pixels, because IE/Win does not allow text to be resized
+	by the user if it is specified in pixels.	
+*/ 
+body {
+ 	margin: 0;
+	padding: 0;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 63.125%;		/* translate 1.0em to 10px, 1.5em to 15px, etc. */
+	color: #222;
+	background-color: #d7d6d1;	/* footer background color */
+ 	}
+ 
+ body#content, body#tinymce {
+	background:none;
+	width:770px;
+	}
+	
+#edit-body {
+	width:765px;
+	height:350px;
+	}
+/****************************************
+ * Cornell Identity
+ ****************************************/
+/* 
+	The following set of rules controls the appearance of the topmost 
+	banner on the page, including height, background color, and text color.
+	The Cornell identity banner should appear on every page of the site.
+	
+	The version of the logo that appears in the XHTML code is hidden from 
+	browsers that can read this stylesheet, and it is replaced by a version
+	of the logo that corresponds to the background color of the banner. 
+	This logo is placed in the background of two elements below (rather than
+	one) to prevent flickering when moused over by IE/Win users who have 
+	disabled the browser cache.
+*/
+#cu-identity {
+	height: 75px;
+	background: #b31b1b;
+	/*
+	Comment out the following line to remove the Ezra Cornell background image from the header.
+	Change 1.jpg to any number up to 8.jpg to use other header background images.
+	*/
+	background: #b31b1b url(../images/layout/header_bg/7.jpg) no-repeat top center;
+	}
+
+.inactive #cu-logo, #cu-logo {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 740px;
+	margin-left: -370px;
+	height: 75px;
+	background: url(../images/layout/unit_signature.gif) no-repeat -8px -1px;
+	}
+	
+.active #cu-logo {
+	margin-left: -250px;
+	}
+	
+	
+#cu-logo a {
+	position: absolute;
+	display: block;
+	border: none;
+	/* hide text link */
+	text-indent: -1000em; 
+	}
+	
+#insignia-link {
+	width: 68px;
+	height: 75px;
+	}
+
+#unit-signature-links a {
+	left: 68px;
+	width: 195px;
+	}
+
+#cornell-link {
+	height: 38px;
+	}
+	
+#unit-link {
+	top: 38px;
+	height: 37px;
+	}
+	
+#cu-logo img {
+	display: none;
+	}
+ 
+ h1.sitename {float:right; 
+ 	position:relative;
+ 	top:-45px;
+ 	font-size: 36px !important;
+ 	}
+
+div.view-content {float:left; width:30%; padding:10px;}
+
+div.views-field-title {font-size: 18px;}
+/*	
+	Search Form
+	-------------------------
+	The following rules control the appearance of the search form interface. 
+	The form is displayed in the Cornell banner, and it is aligned with the 
+	right edge of the page. The search form should appear on every page 
+	of a site. 
+*/
+
+.inactive #search-form, #search-form {
+	position: absolute;
+	margin-right: -385px;
+	top: 18px;
+	right: 50%;
+	}
+	
+.active #search-form {
+	margin-right: -495px;
+	}	
+	
+#search-form form {
+	margin: 0;
+	padding: 0;
+	text-align: right;
+	}
+	
+#search-form label {
+	color: #fff;
+	}
+	
+#search-form-query {
+	padding: 3px;
+	width: 145px;
+	border: none;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #fff;
+	background: #990f0f url(../images/layout/header_search.gif) no-repeat top left;
+	vertical-align:middle;
+	}
+	
+#search-form-submit {
+	padding: 0px 2px 3px 2px;
+	border-top: 1px solid #bf6060;
+	border-left: 1px solid #bf6060;
+	border-right: 1px solid #400606;
+	border-bottom: 1px solid #400606;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 1.0em;
+	font-weight: bold;
+	color: #fff;
+	background: #900;
+	vertical-align: middle;
+	cursor:pointer;
+	}
+	
+#search-filters {
+	margin: 5px 0 0 0;
+	}
+
+#search-filters input {
+	vertical-align: middle;
+	margin: 0;
+	}
+
+#search-filters label {
+	vertical-align: middle;
+	margin: 0 10px 0 0;
+	}
+	
+#search-form a {
+	color: #fff;
+	border-bottom: 1px solid #ce7f7f;
+	}
+	
+#search-form a:hover {
+	border-bottom: 1px solid #fff;
+	}
+
+/* Mask out the site search options provided by the new Google-powered search
+ * results list.
+ */
+div[id^='edit-as-sitesearch'] { visibility: hidden; }
+ 
+/*	
+	Search Navigation 
+	-------------------------
+	The following rules control the appearance of the search navigation 
+	links. These links are displayed horizontally in the Cornell banner, 
+	and they are aligned with the right edge of the page. The baseline
+	of the links is aligned with the baseline of the unit name in the unit
+	signature. Search navigation links should appear on every page of a
+	site. 
+*/
+
+#search-navigation {
+	position: absolute;
+	top: 37px;
+	right: 50%;
+	margin-right: -385px;
+	}
+	
+#search-navigation ul {
+	margin: 0;
+	padding: 0;
+	font-size: 1.1em;
+	}
+	
+#search-navigation li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	background: none;
+	}
+		
+#search-navigation a {
+	float: left;
+	padding: 5px 15px;
+	color: #fff;
+	text-decoration: none;
+	border: none;
+	}
+	
+#search-navigation a:hover {
+	background: #990f26;
+	}
+ 
+/****************************************
+ * Header
+ ****************************************/
+ 
+		
+/*
+	Main Navigation 
+	-------------------------
+	The following rules control the appearance of the main navigation links.
+	These links are displayed in a horizontal band with a gray background. 
+	Main navigation should appear on every page of a site.
+*/
+
+#header {
+	float: left;
+	width: 100%;
+	background: url(../images/layout/header_line_bg.gif) repeat-x top left;	
+	}
+	
+.active #navigation {
+	margin: 0 auto;
+	width: 1066px;
+	}
+	
+.inactive #navigation, #navigation {
+	margin: 0 auto;
+	width: 816px;
+	}
+	
+.active #navigation ul {
+	height:40px;
+	float: left;
+	margin: 0 0 0 0;
+	padding: 0 0 0 250px;
+	width: 816px;
+	font-size: 1em;
+	background: url(../images/layout/bridge_admin_navigation_bg.gif) no-repeat bottom right;
+	}
+	
+.inactive #navigation ul, #navigation ul {
+	height:40px;
+	float: left;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	width: 816px;
+	font-size: 1em;
+	background: url(../images/layout/bridge_admin_navigation_bg.gif) no-repeat bottom right;
+	}
+	
+#navigation li {
+	margin: 0;
+	padding: 0;
+	float: left;
+	background: none;
+	display:list-item;
+	white-space:nowrap;
+	}
+
+#navigation li.first {
+	margin-left:23px;
+	padding: 0;
+	float: left;
+	background: none;
+	display:list-item;
+	white-space:nowrap;
+	}
+
+#navigation a {
+	float: left;
+	padding: 13px 20px;
+	border: none;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #b31b1b;
+	text-decoration: none;
+	display:list-item;
+	white-space:nowrap;
+	}
+	
+#navigation a:hover {
+	background: url(../images/layout/main_tab_rollover_bg.gif) repeat-x top left;
+	}
+	
+#navigation li.active a {
+	background: url(../images/layout/main_tab_rollover_bg.gif) repeat-x top left;
+	}
+
+/****************************************
+ * Content Sections
+ ****************************************/
+/*
+	The following set of rules controls the most general layout elements 
+	used throughout the templates. Every page must have these elements, 
+	with the exception of #secondary-navigation and #secondary, which are 
+	only required on two-column pages.
+	
+	The #wrap element is used to apply the beige background color to the
+	main body of the page. #content is used to specify that the page is 
+	740px wide and centered. #main and #secondary are the right and left
+	vertical columns of content, respectively (one-column pages only use
+	#main, which occupies the entire width).
+*/	
+
+.active #wrap, .inactive #wrap, #wrap {
+	float: left;
+	width: 100%;
+	background: #fff url(../images/layout/horizontal_bar_bg.gif) repeat-x top left;
+	}
+	
+.active #content {
+	margin: 0 auto;
+	width: 1066px;
+	}
+	
+.inactive #content, #content {
+	margin: 0 auto;
+	width: 816px;
+	}
+	
+#main {
+	float: right;
+	padding: 8px 23px 13px 23px;
+	margin: 0 0 0 0;
+	width: 770px;
+	background: url(../images/layout/bridge_admin_bg.gif) no-repeat top right;
+	min-height: 550px;
+	}
+	
+#main-body {
+	float: right;
+	padding: 0 23px 0 23px;
+	margin: 0 0 0 0;
+	width: 770px;
+	height:600px;
+	background: url(../images/layout/bridge_admin_bg3.gif) repeat-y top right;
+	}
+	
+#main-footer {
+	float: right;
+	padding: 0 23px 0 23px;
+	margin: 0 0 0 0;
+	width: 770px;
+	height:50px;
+	background: #fff url(../images/layout/bridge_admin_bg2.gif) no-repeat bottom right;
+	}
+	
+ 
+/****************************************
+ * Section Navigation
+ ****************************************/
+/*
+	The following set of rules controls the appearance of section navigation,
+	which is used on two-column pages. Section navigation is displayed as a 
+	vertical stack of links at the top of the left sidebar of a two-column page.
+	
+	For a detailed example of section navigation, see the two-column template.
+*/
+#secondary-navigation, #secondary {
+	float: left;
+	clear: left;
+	width: 150px;
+	margin: 30px 0 20px 0;
+	}
+ 
+#secondary-navigation ul {
+	margin: 0;
+	padding-bottom: 1px;
+	font-size: 1.2em;
+	font-weight: bold;
+	border-bottom: 1px solid #d8d7d7;
+	border-top: 1px solid #fff;
+	background-color:#fff;
+	}
+	
+#secondary-navigation li {
+	margin: 1px 0 0 0;
+	padding: 0;
+	width: 100%;
+	background-color: #f4f4ef;
+	background-image: none;
+	}
+	
+#secondary-navigation a {
+	display: block;
+	padding: 10px;
+	border: none;
+	/*border-bottom: 2px solid #d8d7d7;*/
+	border-bottom: 1px solid #fff;
+	border-top: 1px solid #d8d7d7;
+	}
+	
+#secondary-navigation a:visited {
+	color: #b31b1b;
+	}
+		
+#secondary-navigation a:hover {
+	color: #f00;
+	background-color: #fff;
+	}
+	
+#secondary-navigation a:active {
+	color: #b31b1b;
+	background: none;
+	}
+
+
+
+.active #administration-menu {
+	margin: 0 0 0 0;
+	padding: 0 0 25px 0;
+	width: 250px;
+	float:left;
+	display:block;
+	background: url(../images/layout/bridge_admin_bg.gif) no-repeat top left;
+	}
+	
+.inactive #administration-menu, #administration-menu {
+	width:0;
+	display:none;
+}
+
+.active #administration-menu h4.header {
+	/*background: url(../images/layout/bridge_admin_bg.gif) no-repeat top left;*/
+	padding:0 0 0 20px;
+	margin:0 0 0 0;
+	display:block;
+	}
+	
+.inactive #administration-menu h4.header, #administration-menu h4.header {
+	display:none;
+	}
+	
+.active #administration-menu div.body {
+	/*background: url(../images/layout/admin_menu_bg.png) no-repeat bottom left;*/
+	margin:0 0;
+	padding:10px 20px 35px 20px;
+	display:block;
+	}
+	
+ .inactive #administration-menu div.body,  #administration-menu div.body {
+ 	display:none;
+	}
+
+
+
+#administration-menu h2 {
+	margin: 10px 0 2px 0;
+	font-size: 1.2em;
+	font-weight: bold;
+	}
+	
+#administration-menu h3 {
+	clear: both;
+	margin: 0 0 15px 0;
+	font-size: 1.3em;
+	line-height: 1.4em;
+	font-weight: bold;
+	}
+	
+#administration-menu h4 {
+	margin: 15px 0 3px 0;
+	font-size: 1.3em;
+	font-weight: bold;
+	text-decoration:underline;
+	letter-spacing:0.1em;
+	}
+	
+#secondary-links-menu {
+	display:block;
+	float: right;
+	margin: 0 0 15px 0;
+	padding: 0 0 88px 0;
+	width: 150px;
+	background: #f4f4ef url(../images/layout/secondary_nav_gradient.gif) no-repeat bottom left;
+	}
+	
+	
+	
+
+	
+	
+/****************************************
+ * Text Styles
+ ****************************************/
+/*
+	The following rules control the appearance of the various textual elements
+	that constitute the contents of a page, including font sizes, colors, and weights, 
+	line spacing, margins, bullets, and borders. 
+	
+	For detailed examples, see the one-column and two-column templates.	
+*/
+
+.views-field-title a {
+	color:#000;
+	text-decoration: none;
+	border:0px;
+}
+
+.views-field-title a:hover {
+	color:#b31b1b;
+	text-decoration: none;
+	border:0px;
+}
+	 
+/****************************************
+ * Forms
+ ****************************************/
+/*
+	The following rules control the appearance of forms.
+	
+	Related sections of form inputs should be organized in fieldsets. 
+	Each fieldset should contain a series of .form-pair divs. Each
+	.form-pair should contain a .form-item div and a .form-value div. The 
+	.form-item should contain a <label> for the <input> or <select> 
+	found in the .form-value.
+	
+	For a detailed example of how to mark up a form, see the 
+	one-column or two-column template.
+*/
+
+#search-form form {
+	float: left;
+	margin: 5px 0 15px 0;
+	padding: 0;
+	width: 510px;
+	}
+	
+/*fieldset {
+	float: left;
+	margin: 0;
+	padding: 10px 0 15px 0;
+	width: 510px;
+	border: none;
+	border-top: 1px solid #e7e7e7;
+	}*/
+		
+#search-form form h3 {
+	margin: 0 15px 5px 15px;
+	}		
+	
+#search-form .form-pair {
+	display: inline;	/* prevent ie6/win from doubling margins */
+	float: left;
+	margin: 5px 15px 0 15px;
+	width: 480px;
+	}
+	
+#search-form .form-item {
+	float: left;
+	margin-top: 5px;
+	width: 165px;
+	font-size: 1.1em;
+	line-height: 1.5em;
+	text-align: right;
+	}	
+	
+#search-form .form-value {
+	float: right;
+	margin-top: 5px;
+	width: 300px;
+	font-size: 1.1em;
+	line-height: 1.5em;
+	}
+
+.checklist {
+	margin: 0;
+	font-size: 1em;
+	}
+
+.checklist li {
+	margin: 0 0 5px 0;
+	padding: 0;
+	background: none;
+	}
+	
+.input-text {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 1em;
+	margin:5px 0 2px 0;
+	}
+
+.form-submit {
+	border-top: none;
+	background: #dbdbd2;
+	margin:10px 0 10px 0;
+	}
+	
+.form-submit-buttons {
+	text-align: right;
+	padding-right: 15px;
+	}
+	
+.form-submit-buttons .input-reset {
+	margin-right: 5px;
+	}
+	
+.input-submit, .input-reset {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 1.3em;
+	}
+	
+.input-submit {
+	font-weight: bold;
+	}
+ 
+ 
+/****************************************
+ * Bridge Page Elements
+ ****************************************/
+/* 
+	The following rules control the appearance of the elements found
+	on a bridge page. For more information about these elements, see the
+	bridge template.
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+	
+/* 
+	Sections (rows)
+	-------------------------
+	Bridge sections (.masthead divs) span the entire width of the 
+	page and clear any columns that may have been established. 
+*/
+
+.masthead {
+	width: 600px;
+	margin: 0 0 0 0;
+	}
+	
+	
+
+.active div.breadcrumb, .inactive div.breadcrumb, div.breadcrumb {
+	width: 580px;
+	margin: 5px 0 3px 0;
+	font-size: 1.0em;
+	line-height: 1.1em;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color: #383838;
+	
+	}
+ 
+ .masthead div.banner {
+ 	width: 770px;
+ 	height: 145px;
+ 	margin: 0 0 0 0;
+ 	}
+	
+
+ .masthead div.banner h1 {
+ 	color: #000;
+ 	font-family:Verdana, Arial, Helvetica, sans-serif;
+ 	font-weight: bold;
+ 	font-size: 30px;
+ 	padding: 80px 0 0 4px;
+ 	letter-spacing: 2px;
+	background-color: transparent;
+	margin: 0 0 0 0;
+	line-height:normal;
+	width:600px;
+ 	}
+	
+	.masthead div.banner h1 span {
+		opacity: 0.75;
+		background-color:#fff;
+		padding:0 5px 3px 5px;
+		}
+		
+	/*	
+	
+	 .masthead div.banner h1:before,  .masthead div.banner h1:after{
+		display: block;
+	}
+	
+	 .masthead div.banner h1:before{
+		margin-bottom: -32px;
+		margin-left: -4px;
+		color: #000; // shadow color
+		background-color: transparent;
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+	}
+	
+	 .masthead div.banner h1:after{
+		margin-top: -39px;
+		margin-left: -2px;
+		color: #fff; // text color 
+		background-color: transparent;
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+	}
+	*/
+	
+
+
+
+
+	
+ .masthead div.accessible-banner {
+ 	width: 770px;
+ 	height: 145px;
+ 	margin: 0 0 0 0;
+	background:url(../images/layout/secondary_banners/28.jpg) no-repeat top left;
+ 	}
+	
+
+ .masthead div.accessible-banne h1 {
+ 	color: #fff;
+ 	font-family:Verdana, Arial, Helvetica, sans-serif;
+ 	font-weight: bold;
+ 	font-size: 30px;
+ 	padding: 30px 0 0 4px;
+ 	letter-spacing: 2px;
+	background-color: transparent;
+	margin: 0 0 0 0;
+	line-height:normal;
+	width:600px;
+ 	}
+	
+	
+	
+	
+	
+	
+	
+ .masthead div.banner #research-menu {
+	width:140px;
+	height:128px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	letter-spacing: normal;
+	float:left;
+	margin: 10px 8px 0 0;
+	padding:0 0 0 0;	
+	background:#b31b1b;
+	color:#fff;
+	text-decoration: none;
+ 	}
+	
+
+	
+#content #main div.masthead div.banner div#research-menu a {
+	 text-decoration:none;
+	 padding: 0 0 0 0;
+	 margin:0 0 0 0;
+	 color:#ffffff !important;
+	 }
+	 
+#content #main div.masthead div.banner div#research-menu a:visited {
+	 color: #b31b1b
+	 }
+	 
+#content #main div.masthead div.banner div#research-menu a:hover {
+	 color: #f00
+	 }
+	 
+#content #main div.masthead div.banner div#research-menu li.active a {
+	color:#b31b1b;
+	text-decoration:none;
+	border-bottom:1px solid #b31b1b;
+	}
+
+#research-menu ul, ol {
+	margin: 0 0 0 0;
+	padding: 0 0;
+	font-size: 1.0em;
+	}
+
+div#block-block-2 {position:relative; top:20px;}
+		
+#research-menu ul li {
+	margin: 0 0;
+	padding: 6px 0 0 15px;
+	list-style: none;
+	background:none;
+	}
+	
+#research-menu span.thmr_call {
+	margin:0 0;
+	padding:0 0;
+	}	
+	
+
+
+	
+/****************************************
+ * Home Page Elements
+ ****************************************/
+/* 
+	The following rules control the appearance of the elements found
+	on a home page. For more information about these elements, see the
+	home template.
+*/
+
+	
+
+#banner {
+ 	width: 770px;
+ 	height: 330px;
+ 	margin: 0 0 6px 0;
+ 	}
+ 
+ div#research {
+ margin: 45px 0 0 0;
+ float: left;
+ width: 100%;
+ padding: 0 0 0 0;
+ height:250px;
+ background: url(../images/layout/search_gradient_bg8.png) no-repeat center top;
+ 
+ }
+ 
+ 
+
+ 
+ 
+ #banner-caption {
+	padding: 0 0 0 0;
+	width: 750px;
+	font-size:11px;
+	color:#fff;
+	text-align:right;
+	text-shadow: #000 1px 1px 1px;
+ 	}
+
+#banner-caption span {
+	/*background-color:#E6E6E6;*/
+	padding: 0 1px 1px 2px;
+	}
+	
+
+
+
+
+ 
+/****************************************
+ * Home Page Section Navigation Tabs
+ ****************************************/
+/*
+	The following set of rules controls the appearance of section navigation,
+	which is used on two-column pages. Section navigation is displayed as a 
+	vertical stack of links at the top of the left sidebar of a two-column page.
+	
+	For a detailed example of section navigation, see the two-column template.
+*/
+
+ 
+
+
+	
+/****************************************
+ * Footer
+ ****************************************/
+/* 
+	The following rules control the appearance of the footer found at the 
+	bottom of every page. The footer contains the Cornell University copyright,
+	which is displayed in a small font size. The color of the bottom border
+	of the link in the footer is darker than most links to provide adequate 
+	contrast with the background color of the footer.
+*/
+ 
+#footer {
+	float: left;
+	width: 100%;
+	}
+	
+#footer-content, .inactive #footer-content {
+	margin: 0 auto;
+	padding: 15px 0 25px 0;
+	width: 730px;
+	font-size: 1.0em;
+	color: #333;
+	}
+	
+.active #footer-content {
+	margin: 0 auto;
+	padding: 15px 0 25px 250px;
+	width: 730px;
+	font-size: 1.0em;
+	color: #333;
+	}
+	
+#footer-content div {
+	line-height: 16px;
+	}
+	
+/* links */
+
+#footer a {
+	border-bottom: 1px solid #ccadad;
+	}
+	
+#footer a:active {
+	border-color: #ccadad;	
+	}
+ 
+/****************************************
+ * Miscellaneous
+ ****************************************/
+
+/* 
+	Hide "skip to content" link from general users. 
+	Do not use display: none, as that will also hide it from some screen readers.
+*/
+#skipnav {
+	position: absolute;
+	top: -1000em;
+	left: -1000em;
+	}
+	
+/* Make feedback messages a little more visible after form submission */
+.messages {
+	font-weight: bold;
+	font-size: 150%;
+}
+	
+/* 
+	Hide horizontal rules (hr) that are found throughout the site.
+	The rules are semantic separations of content, and they are useful for 
+	browsers that cannot utilize the stylesheet.
+*/	
+hr.hidden {
+	display: none;
+	}
+
+
+.field {
+	font-size:12px;
+	}
+	
+.location {
+	font-size:12px;
+	margin-bottom:20px;
+	}
+	
+a.you_recommend {
+  font-size: 12px;
+  text-align: right;
+  font-weight: bold;
+  margin-right: 15px;
+  display: block;
+  border-bottom: 0px;
+}
+
+/* this accounts for right alignment of images in we recommend posts
+   (clears right float) */
+.make-recommendation:before {
+    margin-bottom: 20px;
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.make-recommendation h2 {
+  font-size:18px;
+  margin-right: 15px;
+  padding: 10px 10px;
+  background-color:#D9D9CE;
+}
+
+div.we-recommend h2 a {
+  font-size: 12px;
+}
+	
+.item-list ul.we_recommend_list li {
+  margin: 0 0 0 0;
+  padding: 0;
+  list-style:none;
+  background:none;
+  list-style-position:inside;
+  border-top:0px solid #99998C;
+  display:block;
+}
+
+.item-list ul.we_recommend_list li.left {
+	float:left;
+	clear:left;
+	}
+	
+.item-list ul.we_recommend_list li.right {
+	float:left;
+	clear:right;
+	}
+
+.we-recommend {
+	border-top: 0 solid #99998C;
+	margin:10px 0 0 0;
+	padding: 10px 0 20px 0;
+	}
+	
+.we-recommend h2 {
+	margin:10px 15px 10px 0;
+	font-size:18px;
+	padding: 10px 10px;
+	background-color:#D9D9CE;
+	}
+
+div.rounded-box {
+	width: 370px;
+	/*background: url(../images/layout/rounded_corners_body_bg.gif) no-repeat bottom right;*/
+	margin: 5px 10px 5px 0;
+	padding:5px 0 5px 0;
+	clear:left;
+	background-color:#F4F4ED;
+	border-bottom:1px solid #A7A7A7;
+	border-right:1px solid #A7A7A7;
+	border-top:1px solid #CCCCCC;
+	border-left:1px solid #CCCCCC;
+	
+	}
+	
+div.spacer {
+	height:4px;
+	margin:0 0;
+	padding:0 0;
+	background-color:#fff;
+	line-height:4px;
+	}
+	
+
+ 
+.rounded-box div.header {
+	margin: 0;
+	padding: 5px 3px 0 10px;
+	border-bottom: 0px solid #666;
+	/*background: url(../images/layout/rounded_corners_head_bg.gif) no-repeat top right;*/
+	text-align: left;
+	vertical-align: middle;
+	}
+
+.rounded-box div.teaser h2 {
+	font-family:verdana;
+	font-size: 13px;
+	font-weight: bold;
+	/*white-space:nowrap;*/
+	letter-spacing: 0.5px;
+	padding:0 0;
+	margin: 0 0 10px 0;
+	background-color:#F4F4ED;
+	}
+	
+.rounded-box div.teaser h2 a {
+	color: rgb(153, 153, 140);
+	font-size:14px;
+	}
+	
+.rounded-box div.teaser h2 a:hover {
+	color: rgb(255, 0, 0);
+	
+	}
+	
+.rounded-box div.teaser p {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000;
+	margin:0 0 4px 0;
+	}
+	
+
+	
+.rounded-box div.footer {
+	color: #333;
+	text-align:left;
+	height:2px;
+	margin: 0 8px 0 0;
+	clear:both;
+	padding: 0 0;
+	font-size:2px;
+	line-height:2px;
+	}
+	
+
+.rounded-box div.body {
+	color: #333;
+	text-align:left;
+	margin: 0 8px 0 0;
+	padding: 0 2px 0 10px;
+	font-size:12px;
+	}
+	
+
+
+	
+.rounded-box div.body div.shadow img {
+	margin: 0 0 0 0;
+	}
+
+.rounded-box div.body div.shadow {
+	float:left;
+	width:82px;
+	height:82px;
+	margin: 5px 10px 2px 5px;
+	padding:0 0;
+	background: url(../images/layout/thumb_shadow.gif) no-repeat bottom right;
+	}
+	
+.rounded-box div.body div.teaser {
+	padding:0 0;
+	margin:5px 5px 0 5px;
+	line-height:16px;
+	}
+	
+.rounded-box div.body h3 {
+	font-family:verdana;
+	font-size:11px;
+	font-weight:bold;
+	margin:0 0 0 0;
+	clear:none;
+	}
+
+.mission {
+	background-color: #dbdbda;
+	border-bottom: 1px solid rgb(167, 167, 167);
+	border-left: 1px solid rgb(204, 204, 204);
+	border-right: 1px solid rgb(167, 167, 167);
+	border-top: 1px solid rgb(204, 204, 204);
+	float: right;
+	margin: 0 45px 25px 25px;
+	padding: 3px 3px;
+	width: 350px;
+	font-size:1.3em;
+	font-family:Georgia;
+	}
+	
+.mission-statement {
+	margin:20px 0 0 15px;
+	}
+	
+.mission-border {
+	border:1px solid #999;
+	padding:8px 8px;
+	margin:3px 3px;
+	background-color: #efefee;
+	}
+	
+.pilot {
+	font-size:4.4em;
+	float:left;
+	font-weight:normal;
+	font-style:normal;
+	margin:8px 3px 0 0;
+	padding:0 0;
+	line-height:30px;
+	}
+
+.goal {
+	margin-left:0;
+	border-top:1px solid #ccc;
+	clear:both;
+	}
+	
+.goal blockquote {
+	float:right;
+	clear:none;
+	margin:0 0;
+	width:670px;
+	
+	}
+		
+.goal h3 {
+	font-family:Georgia;
+	margin: 4px 0 4px 0;
+	font-size:1.6em;
+	padding:10px 0 0 15px;
+	font-weight:bold;
+	letter-spacing:1px;
+	}
+	
+.goal .ordinal {
+	padding:10px 0 0 0;
+	margin:4px 0 4px 10px;
+	font-family:Times;
+	font-weight:bold;
+	font-size:2.0em;
+	font-style:italic;
+	text-decoration:none;
+	float:left;
+	clear:none;
+	color:#ADA887;
+	}
+
+.goal ul {
+	margin-left:0;
+	} 
+	
+.goal ul li {
+	line-height:normal;
+	margin:5px 0 5px 0;
+	padding:0 0 0 30px;
+	font-size:0.9em;
+	color:#666;
+	}
+
+.twitter-follow-button, .facebook-link img {
+	vertical-align: middle;
+}

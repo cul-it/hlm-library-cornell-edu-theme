@@ -1,0 +1,25 @@
+name = 'hlmtheme'
+description = ''
+version = VERSION
+core = '7.x'
+
+stylesheets[all][] = styles/default.css
+stylesheets[all][] = styles/secondary_page.css
+stylesheets[all][] = styles/swoosh.css
+stylesheets[all][] = styles/overrides.css
+stylesheets[all][] = thickbox-code/thickbox.css
+
+;scripts[] = thickbox-code/thickbox-compressed.js
+
+regions[header]         = Header
+regions[banner]         = Banner
+regions[navbar]         = Navigation Bar
+regions[content] 		= Content
+regions[right]          = Right Sidebar
+regions[left]         	= Left Sidebar
+regions[footer]         = Footer
+regions[research_menu]  = Research Menu
+regions[masthead]  		= Masthead
+regions[page_top]       = Page top
+regions[page_bottom]    = Page bottom
+

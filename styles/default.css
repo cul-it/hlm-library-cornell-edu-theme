@@ -1,0 +1,239 @@
+body {
+ 	margin: 0;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 63.125%;		/* translate 1.0em to 10px, 1.5em to 15px, etc. */
+	color: #222;
+	background-color: #fff;	/* footer background color */
+ 	}
+	
+	
+
+
+/* 
+	Headlines 
+	-------------------------
+	Headlines introduce sections of text, and they should be used in a 
+	way that consistently represents the heirarchy of information on a page.
+*/
+ 
+h1 {
+	margin: 0 0 15px 0;
+	font-size: 2.2em;
+	font-weight: bold;
+
+	} 
+ 
+h2 {
+	margin: 0 0 15px 0;
+	font-size: 1.8em;
+	font-weight: bold;
+	}
+	
+h3 {
+	clear: both;
+	margin: 0 0 15px 0;
+	font-size: 1.3em;
+	line-height: 1.4em;
+	font-weight: bold;
+	}
+	
+h4 {
+	margin: 15px 0 3px 0;
+	font-size: 1.2em;
+	font-weight: bold;
+	}
+	
+/* 
+	Text
+	-------------------------
+	Paragraphs of text, extended quotations, and captions
+*/
+
+p {
+	margin: 0 0 15px 0;
+	font-size: 1.3em;
+	line-height: 1.4em;
+	}
+	
+blockquote {
+	margin: 0 30px;
+	}
+	
+/* captions */
+	
+.caption {
+	font-size: 1.1em;
+	line-height: 1.5em;
+	color: #666;
+	}
+	
+/* 
+	Lists 
+	-------------------------
+	Unordered lists (ul) represent a sequence of items in no particular
+	order. They are displayed with a square bullet to the left of each 
+	list item (li).
+	
+	Ordered lists (ol) represent an ordered sequence of items. They are 
+	displayed with a number to the left of each list item (li).
+	
+	Definition lists (dl) represent a set of terms (dt) and definitions (dd).
+	Each term should be followed by one or more definitions. Definition lists
+	are very useful for marking up a series of links, each of which has an
+	explanatory passage of text.
+
+*/
+
+
+	
+ul, ol {
+	margin: 0 0 15px 0;
+	padding: 0;
+	font-size: 1.3em;
+	line-height: 1.4em;
+	}
+	
+ul ul, ul ol, ol ol, ol ul {
+	font-size: 1.0em;
+	}
+	
+ul li {
+	margin: 5px 0;
+	padding: 0 0 0 30px;
+	list-style:none;
+	background: url(../images/layout/bullet.gif) no-repeat 18px 0.65em;
+	}
+ 
+ol li {
+	margin: 5px 0 5px 30px;
+	}
+ 
+dl {
+	margin: 0 0 15px 0;
+	line-height: 1.4em;
+	}
+	
+dt {
+	margin: 0 0 3px 0;
+	font-size: 1.2em;
+	font-weight: bold;
+	}
+	
+dd {
+	margin: 0 0 15px 0;
+	font-size: 1.3em;
+	line-height: 1.4em;
+	}
+	
+/* 
+	Links 
+	-------------------------
+	Links are displayed as dark red text. The underline is replaced by a 
+	lighter bottom border. Visited links have less contrast than unvisited 
+	links. Both visited and unvisited links turn bright red when moused over,
+	and they return to their normal state when selected.
+*/
+
+a {
+	border-bottom: 1px solid #e5cfcf;
+	color: #b31b1b;
+	text-decoration: none;
+	}
+	
+a:visited {
+	color: #b37474;
+	}
+	
+a:hover {
+	color: #f00;
+	border-color: #f00;
+	}
+	
+a:active {
+	color: #b31b1b;
+	border-color: #e5cfcf;	
+	}
+	
+
+
+
+ 
+/****************************************
+ * Tables
+ ****************************************/
+/*
+	The following rules control the appearance of tables, which are used only
+	for tabular data. To create the appearance of alternating stripes of 
+	background colors on rows of data, use the .row1 and .row2 classes on 
+	<tr> elements.
+	
+	For a detailed example of how to mark up a table, see the 
+	one-column or two-column template.
+*/
+table, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 1em;
+	}
+	
+table {
+	margin: 15px 0;
+	/*border-bottom: 0px solid #e7e7e7;*/
+	border:none;
+	caption-side: bottom;
+	border-collapse:collapse;
+	}
+	
+th {
+	padding: 0 15px 5px 15px;
+	font-weight: normal;
+	text-align: left;
+	color: #888;
+	}
+	
+td, tbody th {
+	padding: 10px 15px;
+	border: 1px solid #e7e7e7;
+	font-size: 1.1em;
+	line-height: 1.5em;
+	vertical-align: top;
+	}
+	
+tbody th {
+	font-weight: bold;
+	color: #222;
+	text-align: right;
+	}
+	
+.row1, .row1 td, .row1 th {
+	background: #fff;
+	} 
+	
+.row2, .row2 td, .row2 th {
+	background: #fafaf7;
+	}
+	
+tfoot td {
+	font-weight: bold;
+	}
+
+caption {
+	margin: 0 0 15px 0;
+	text-align: left;
+	color: #888;
+	font-size: 1.1em;
+	}
+	
+select, textarea {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 1em;
+	margin:5px 0 2px 0;
+	}
+	
+	
+hr {
+	border:0px solid #fff;
+	height:1px;
+	
+	}
